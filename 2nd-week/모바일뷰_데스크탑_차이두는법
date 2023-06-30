@@ -1,0 +1,7 @@
+    <div class="flex flex-row gap-2 mt-1 max-xl:flex-col">
+      <TeamDropdown bind:teamId={selectedTeamId} items={workGroups} styleClass="select select-bordered max-xl:w-[calc(50%-6px)]"  />
+      <WorkProcessDropdown bind:workProcessId={selectedProcessId} team={selectedTeam} styleClass="select select-bordered max-xl:w-[calc(50%-6px)]" />
+      <DeliveryRegionDropdown showAll="true" items={deliveryRegions} bind:regionId={selectedRegionId} styleClass="select select-bordered max-w-xs "  />
+      <DeliveryZoneDropdown showAll="true" bind:zoneId={selectedZoneId} bind:regionId={selectedRegionId} items={deliveryZones} styleClass="select select-bordered" />
+      <input hidden name="delivery_zone_id" value={selectedZoneId ?? ""} class="{errors?.delivery_zone_id ? 'input-error' : 'input-bordered'}"/>
+    </div>
